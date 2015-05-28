@@ -14,4 +14,5 @@ y los métodos a estudiar son:
 3. diferenciación e integración numérica,
 4. ecuaciones diferenciales ordinarias,
 5. ecuaciones diferenciales parciales,
-6. y métodos de Monte Carlo.
+6. y métodos de Monte Carlo
+
