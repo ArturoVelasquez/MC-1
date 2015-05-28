@@ -1,2 +1,2 @@
 # MC
-Repository for computational methods lecture (June-July 2015).
+Repositorio para la clase Métodos Computacionales Uniandes (Junio-Julio 2015).
