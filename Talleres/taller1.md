@@ -37,7 +37,7 @@ done
 awk -F "," '{print $1","$2","$1+$2}' taller.csv > tallerawk.csv
 ```
 
-**Cuartoo punto:**
+**Cuarto punto:**
 ```
 #!/bin/bash
 read a b
