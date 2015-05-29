@@ -1,4 +1,4 @@
-#Primera Clase (27-25-15)
+#(27-25-15) Primera Clase
 ¡Hola mundo!, aquí estoy comenzando el curso de **Métodos Computacionales**.
 
 Herramientas del curso:
@@ -16,3 +16,5 @@ y los métodos a estudiar son:
 5. ecuaciones diferenciales parciales,
 6. y métodos de Monte Carlo
 
+#(28-25-15) Primera Lectura
+Resumen realizado de las lecturas **Pro Git** pgs 27-34 y **Pro Bash Programming** pgs 1-28.
