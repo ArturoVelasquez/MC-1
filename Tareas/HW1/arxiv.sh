@@ -1,20 +1,19 @@
-echo "Escriba una palabra clave para buscar en los últimos repositorios de arXiv sobre astofísica de galaxias:"
-read keyword
+#!/bin/bash
+
+count=$(curl -s http://arxiv.org/list/astro-ph.GA/new | grep '<span class="descriptor">Title:</span> ' | grep -ci $1)
+
+results=($(curl -s http://arxiv.org/list/astro-ph.GA/new | grep '<span class="descriptor">Title:</span> ' | grep -i $1 | sed 's/<span class="descriptor">Title:<\/span>\ //g'))
 
 figlet arXiv
 echo '======================================
 Searching the arXiv for the new Stuff
 http://arxiv.org/list/astro-ph.GA/new
 ======================================
-keyword: '$keyword
+keyword: '$1
 echo '======================================
-Articles found: ' 
-curl -s http://arxiv.org/list/astro-ph.GA/new | grep '<span class="descriptor">Title:</span> ' | grep -c $keyword
-curl -s http://arxiv.org/list/astro-ph.GA/new | grep '<span class="descriptor">Title:</span> ' | grep $keyword | sed 's/<span class="descriptor">Title:<\/span>\ //g'
+Articles found: '$count
+for ((i=0; i<$count; i++))
+do
+	echo '- '${results[$i]}
+done
 echo '======================================'
-
-
-
-
-
-
