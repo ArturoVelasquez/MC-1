@@ -43,3 +43,14 @@ awk -F "," '{print $1","$2","$1+$2}' taller.csv > tallerawk.csv
 read a b
 echo $((a+b))
 ```
+
+**Quinto punto:**
+```
+#!/bin/bash
+while true
+do
+	date '+%H:%M:%S' | figlet
+	sleep 1s
+	clear
+done
+```
