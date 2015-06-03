@@ -44,10 +44,12 @@ sed -E -i 's/\)//g' pgn.dat
 ```
 * y por último cambiar todos los paréntesis izquierdos por -. El resultado final debe quedar guardado en el archivo `pgn.tsv`.
 ```
-sed -E -i 's/\(/-/g' pgn.dat
+sed -E -i 's/\(/-/g' pgn.dat > pgn.tsv
 ```
-
 * Finalmente usar `sort --field-separator=$'\t' ...`  y `head` para organizar el archivo de acuerdo al cambio porcentual y encontrar el sector con el menor cambio porcentual.
+```
+echo 'El sector con menor cambio porcentual fue: '$(sort --field-separator=$'\t' --key=4 -n pgn.tsv | awk -F"\t" '{print $1}' |head -1)
+```
 
 ## gnuplot
 
