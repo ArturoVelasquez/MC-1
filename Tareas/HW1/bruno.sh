@@ -16,5 +16,9 @@ echo 'Cantidad de planetas con masa menor a una centésima de la de Júpiter: '$
 #Imprime la info de los planetas mencionados
 cat menorJupiter.csv
 
+#Imprime el nombre del planeta con menor periodo
 menorperiodo=$(awk -F"," '{if ($6 > 0) {print $6}}' kepler.csv | sort | head -1)
 echo 'planeta con menor periodo orbital: '$(grep $menorperiodo kepler.csv | awk -F"," '{print $1}')
+
+#Elimina archivos auxiliares creados
+rm kepler.csv menorJupiter.csv
