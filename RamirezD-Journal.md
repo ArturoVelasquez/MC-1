@@ -83,3 +83,9 @@ Para aplicar una función a <u>todos</u> los datos de una columna en vez de pone
 [Cómo hacer un fit en gnuplot](http://gnuplot.sourceforge.net/docs_4.2/node82.html)
 
 Herramienta útil para copiar código html de páginas web -> w3m. `sudo apt-get install w3m`
+
+#(05-06-15)
+```
+touch esfericos.c
+set view equal xyz #para que las gráficas en 3D se vean simétricas
+```
