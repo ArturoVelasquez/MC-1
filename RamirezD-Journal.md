@@ -20,6 +20,16 @@ y los métodos a estudiar son:
 Resumen realizado de las lecturas **Pro Git** pgs 27-34 y **Pro Bash Programming** pgs 1-28.
 
 #(29-05-15) Segunda Clase
+Completamos introducción a Git. Taller realizado en el laboratorio.
+Cómo hacer una tabla en Markdown:
+
+|Hola|Escribo|Cosas|En
+|---|---|-----|---|
+|La|Tabla|  |  |
+|  |   |  |  |
+|  |   |  |  |
+
+ Nota: los comandos de html sirven en markdown: <bold>Negrilla en html</bold> - **negrilla en markdown**
 
 #(02-06-15) Tercera Clase
 ####Expresiones regulares.
@@ -68,4 +78,8 @@ Para aplicar una función a <u>todos</u> los datos de una columna en vez de pone
 #####Expresiones regulares
 
 #(03-06-15) Cuarta Clase
-Miremos
+`pqcopy` Copia en el portapapeles (al menos en Mac) - averiguar para ubuntu.
+
+[Cómo hacer un fit en gnuplot](http://gnuplot.sourceforge.net/docs_4.2/node82.html)
+
+Herramienta útil para copiar código html de páginas web -> w3m. `sudo apt-get install w3m`
