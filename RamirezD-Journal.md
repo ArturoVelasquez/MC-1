@@ -89,3 +89,5 @@ Herramienta útil para copiar código html de páginas web -> w3m. `sudo apt-get
 touch esfericos.c
 set view equal xyz #para que las gráficas en 3D se vean simétricas
 ```
+
+passwd
