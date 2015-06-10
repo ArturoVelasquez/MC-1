@@ -77,6 +77,7 @@ Para aplicar una función a <u>todos</u> los datos de una columna en vez de pone
 ###Hands-on 2
 #####Expresiones regulares
 
+
 #(03-06-15) Cuarta Clase
 `pqcopy` Copia en el portapapeles (al menos en Mac) - averiguar para ubuntu.
 
