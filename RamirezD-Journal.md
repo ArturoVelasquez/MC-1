@@ -60,7 +60,7 @@ Para que las gráficas realizadas se muestren desde la terminal se escribe ```se
 
 Para que las gráficas realizadas se muestren en una ventana *pop-out* es con el comando ```aqua``` (falta por investigar esto bien para Ubuntu.
 
-Para tomar los datos a graficar de un archivo externse se debe primero ir a la carpeta donde se encuentre el archivo y luego escribir ```set data file separator ","```.
+Para tomar los datos a graficar de un archivo externse se debe primero ir a la carpeta donde se encuentre el archivo y luego escribir ```set datafile separator ","```.
 
 ```
 plot "joviansatellites.csv" using 2:3 with lines
