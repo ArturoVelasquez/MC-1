@@ -32,7 +32,7 @@ Cómo hacer una tabla en Markdown:
  Nota: los comandos de html sirven en markdown: <bold>Negrilla en html</bold> - **negrilla en markdown**
 
 #(02-06-15) Tercera Clase
-####Expresiones regulares.
+###Expresiones regulares.
 - *^* Representa el inicio de una línea.
 - *$* Representa el final de una línea.
 - *.* Representa cualquier caracter.
@@ -54,7 +54,27 @@ Ahora manualmente eliminamos los subtítulos que posee el archivo.
 
 Borramos comas indeseadas al final de cada línea.
 
-####GNUPlot.
+####Hands-On2 log
+1. Construya una expresión regular que represente cuatro caracteres al inicio de una línea junto con un espacio a continuación.
+```
+^.{4}\ 
+```
+3. Descargue con `curl` el código fuente de la página [Pi - 10 Million Digits](http://pi.karmona.com), límpielo de todo caracter diferente a los dígitos de pi y divídalo en líneas con 20 dígitos cada una quedando ellas en un archivo con nombre `PIslices20.dat`.
+```
+#!/bin/bash
+curl -s http://pi.karmona.com/ > PIslices20.dat #Descarga el código fuente de la página
+sed -i '1d' PIslices20.dat #Elimina la primera línea
+#Elimina texto referente a comandos HTML
+sed -i 's/<CENTER><B>Pi\ -\ 10 Million\ Digits<\/B><BR><BR><BR>//g' PIslices20.dat
+sed -i 's/<B>//g' PIslices20.dat
+sed -i 's/<\/B>//g' PIslices20.dat
+sed -i 's/<\/center><\/BODY><\/HTML>//g' PIslices20.dat
+sed -i 's/<BR>//g' PIslices20.dat
+#Inserta una línea nueva cada 20 caracteres (ignorando los puntos)
+sed -E -i "s/.[^.]{20}/&\n/g" PIslices20.dat
+```
+
+###GNUPlot.
 Es una herramienta para realizar gráficas.
 Para que las gráficas realizadas se muestren desde la terminal se escribe ```set term dumb```.
 
@@ -74,9 +94,18 @@ cube (x) = x**3
 
 Para aplicar una función a <u>todos</u> los datos de una columna en vez de poner la la variable se pone $
 
-###Hands-on 2
-#####Expresiones regulares
-
+####Hands-On2 log
+1. Escriba un script de `bash` que reciba tres argumentos, el nombre de un archivo csv, el número de la columna para el eje horizontal y el número de la columna para el eje verticual y que haga con `gnuplot` una gráfica de dispersión con puntos visibles y unidos por líneas rectas. Haga pruebas con el archivo [joviansatellites.csv](https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionales/master/examples/joviansatellites.csv)]
+```
+#!/bin/bash
+gnuplot<<EOF
+set term dumb
+set datafile separator ","
+set xrange [1:350]
+set yrange [0:780]
+plot "joviansatellites.csv" using 2:3 with linesp
+EOF
+```
 
 #(03-06-15) Cuarta Clase
 `pqcopy` Copia en el portapapeles (al menos en Mac) - averiguar para ubuntu.
