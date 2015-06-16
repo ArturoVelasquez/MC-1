@@ -1,0 +1,11 @@
+.DS_Store
+npm-debug.log
+node_modules
+
+# Ignore notebook checkpoints created (especially for the examples)
+.ipynb_checkpoints
+
+# Ignore LaTeX extra files created but .pdf and .tex
+*.aux
+*.log
+*.synctex.gz
