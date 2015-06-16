@@ -192,9 +192,6 @@ Esto sería una herramienta útil que le serviría a las personas que en un futu
 #(10-06-15) Séptima Clase
 Una de las herramientas más poderosas para cálculos matemáticos en python es la librería *numpy*, esta suele ser importada de la siguiente manera: `import numpy as np`.
 
-####Hands-On5 log
-3. Haga un panel de 5X5 con diferentes [curvas de Lissajous](http://en.wikipedia.org/wiki/Lissajous_curve).
-
 **Nota** dado que para ejecutar un script toca entregar el path del motor de ejecución esta es la correcta forma de hacerlo:
 ```
 #Para Bash
@@ -206,6 +203,9 @@ Una de las herramientas más poderosas para cálculos matemáticos en python es 
 #Para python3
 #!/usr/bin/python3
 ```
+
+####Hands-On5 log
+3. Haga un panel de 5X5 con diferentes [curvas de Lissajous](http://en.wikipedia.org/wiki/Lissajous_curve).
 
 Código que genera las curvas:
 ```
@@ -232,6 +232,11 @@ Y por último podemos ver las gráficas a continuación:
 
 ---
 #(12-06-15) Octava Clase
+####Hands-On6 log
+## Error e incertidumbre en cálculos numéricos
+
+1. Inicie un cuaderno de IPython con apuntes del libro de [Landau](http://www.compadre.org/psrc/items/detail.cfm?ID=11578) llamado `/MC/Notes/LandauNotes.ipynb`, lea el segundo capítulo del libro, intente reproducir algunos de los resultados y resuelva algunos ejercicios.
+2. En su bitácora escriba al menos dos párrafos de resumen de lo aprendido sobre error e incertidumbre.
 
 ---
 #(16-06-15) Novena Clase
