@@ -248,6 +248,64 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 ```
+####Hands-On7 log
+3. La tabla mostrada abajo tiene información sobre el campo magnético de un dipolo magnético a lo largo de su eje, haga un ajuste por mínimos cuadrados de acuerdo a un modelo teórico adecuado y calcule la magnitud del [momento magnético](https://en.wikipedia.org/wiki/Magnetic_dipole)  del imán (en A m^2) y una tabla para B(x) con 100 renglones uniformemente espaciada entre el x=2.3cm y x=4.3cm. Haga una gráfica con los datos y el ajuste encontrado. **log**
+
+
+	| x/cm        | B/uT           |
+	| ------------- |:-------------:|
+	|2.3|34745|
+	|2.8|19689|
+	|3.2|12594|
+	|3.7|7982|
+	|4.3|5822|
+
+La solución a esto se puede encontrar detalladamente en [este](https://github.com/diegolramirez/MC/blob/master/Talleres/taller(15-06-16)/Hands-On7.ipynb) cuaderno de ipython.
+
+Primero paso la información de la tabla a arrays de numpy:
+```
+xr = np.array([2.3,2.8,3.2,3.7,4.3])
+B = np.array([34745,19689,12594,7982,5822])
+```
+
+Luego defino la función por la cuál se hará la regresión y hago la regresión.
+####Ecuación de campo magnético. 
+$|B|=\frac{\mu_{0}}{4\pi} \left( \frac{3r(m\cdot r)}{r^5} - \frac{m}{r^3} \right) \approx \frac{\mu_{0}}{2\pi} \left( \frac{m}{r^3} \right)$
+Donde *m* se refiere al momento magnético dipolar, el cual queremos hallar utilizando el ajuste por mínimo cuadrados.
+```
+def magnetico(r,m):
+    return (m/r**3)
+
+fitpars,covmat = curve_fit(magnetico,xr,B)
+```
+
+Ahora utilizando el fit obtenido a partir de la regresión expando los datos a 100 utilizando `np.linspace` y luego los agrupo en una tabla.
+```
+xr100 = np.linspace(2.3,4.3,100)
+B100 = magnetico(xr100,fitpars)
+
+print "|     x/cm     |     B/uT     |\n|--------------|--------------|"
+for i in range (len(B100)):
+    print "|   %f   | %f |"%(xr100[i],B100[i])
+```
+
+Por último hago una gráfica que contiene tanto la regresión como los datos originales para compararlos.
+```
+plt.plot(xr100,B100,color='blue', label='fit')
+plt.scatter(xr,B,color='red', label='real')
+plt.legend()
+plt.xlabel("x(cm)")
+plt.ylabel(r"B($\mu$T)")
+plt.title("Campo magnetico respecto a la distancia del dipolo")
+plt.savefig("campoB.png")
+plt.show()
+```
+
+La imagen es esta: ![](https://raw.githubusercontent.com/diegolramirez/MC/master/Talleres/taller(15-06-16)/camposB.png)
+
+4. Dedique diez minutos a pensar en ideas para su proyecto final.
+
+Teniendo en cuenta que mi primera proposición para el proyecto final no es válida me toca repensar todo desde cero.
 
 ---
 #(17-06-15) Décima Clase

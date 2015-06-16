@@ -37,4 +37,3 @@ Masa de Júpiter = 1.898E27 kg-->
 
 
 <!--![](https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionales/master/hands_on/figures/choreography.png =700x)-->
-
