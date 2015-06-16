@@ -31,7 +31,9 @@ Cómo hacer una tabla en Markdown:
 |  |   |  |  |
 |  |   |  |  |
 
- Nota: algunos comandos de html sirven en markdown: <u>subrayado en html</u> - markdown propiamente no tiene un comando para subrayar.
+ Nota: algunos comandos de html sirven en markdown: <u>subrayado en html</u> - markdown propiamente no tiene un comando para subrayar. Pero esto no sirve en todos los visualizadores de markdown.
+
+[Markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
 ---
 #(02-06-15) Tercera Clase
@@ -134,9 +136,99 @@ Make es una herramienta que ayuda a organizar dependencias de archivos cuando se
 
 ---
 #(09-06-15) Sexta Clase
+Durante la clase se hizo una introducción a matplotlib de python. Esta es una librería para realizar gráficas en python. Si se utiliza el notebook basta con utilizar el comando `%pylab inline` debido a que matplotlib está contenida en el paquete de pylab.
+
+Por otro lado se puede invocar solo la parte pyplot que es la más representativa para realizar gráficas, el comando genérico para esto es `import matplotlib.pyplot as plt`.
+
+**Nota** para utilizar paquetes de python es importante manejarlos de manera adecuada. Debido a que `apt-get` se queda corto en cuanto al manejo de las dependencias se recomienda utilizar `pip`. Entonces por ejemplo para instalar las librerías necesarias para el curso en python 2 y 3 se debe ejecutar el siguiente código en la terminal:
+
+```
+#!/bin/bash
+#python2
+#Install python 2
+sudo apt-get install python
+#Install python 2 special libraries
+sudo apt-get install ipython ipython-notebook python-dev python-pip python-numpy python-scipy python-matplotlib python-pandas python-sympy python-nose
+#Manage packages with pip
+sudo apt-get install python-setuptools
+sudo easy_install pip
+sudo -H pip install --upgrade pip
+sudo -H pip install --upgrade virtualenv
+sudo -H pip install pylab --upgrade
+sudo -H pipinstall ipython[notebook]
+sudo ipython kernelspec install-self
+
+#python3
+sudo apt-get install python3
+#Install python 2 special libraries
+sudo apt-get install ipython3 ipython3-notebook python3-dev python3-pip python3-numpy python3-scipy python3-matplotlib python3-pandas python3-sympy python3-nose
+#Manage packages with pip
+sudo apt-get install python3-setuptools
+sudo easy_install3 pip
+sudo -H pip install --upgrade pip
+sudo -H pip install --upgrade virtualenv
+sudo -H pip install pylab --upgrade
+sudo -H pipinstall ipython[notebook]
+sudo ipython3 kernelspec install-self
+```
+
+####Hands-On4 log
+1. Dedique 10 minutos a pensar en proyectos que le gustaría desarrollar con lo que hemos visto en las primeras dos semanas del curso.
+
+Todavía no estoy seguro de las instrucciones específicas del proyecto final pero basado en lo que hemos visto me interesaría hacer un script de bash que instale y configure todos los paquetes necesarios para los cursos herramientas computacionales y métodos computacionales en la distribución Ubuntu de Linux. 
+
+Esto sería una herramienta útil que le serviría a las personas que en un futuro tomen el curso. Los paquetes a instalar contendrían, pero no estarían limitados a:
++ LaTeX y mi editor favorito de este TeXMaker
++ Markdown y mi editor favorito de este Remarkable
++ Python2 y Python3 con todas sus librerías correspondientes, utilizando `apt-get` y  `pip`. Esto contendría también el notebook en su última versión *Jupyter*.
++ Los lenguajes c y java (con sus respectivos compiladores) y su editor más popular *Eclipse*.
++ Git, junto a una breve explicación de su configuración.
++ W3m
++ Figlet
++ Curl
++ GnuPlot
 
 ---
 #(10-06-15) Séptima Clase
+Una de las herramientas más poderosas para cálculos matemáticos en python es la librería *numpy*, esta suele ser importada de la siguiente manera: `import numpy as np`.
+
+####Hands-On5 log
+3. Haga un panel de 5X5 con diferentes [curvas de Lissajous](http://en.wikipedia.org/wiki/Lissajous_curve).
+
+**Nota** dado que para ejecutar un script toca entregar el path del motor de ejecución esta es la correcta forma de hacerlo:
+```
+#Para Bash
+#!/bin/bash
+
+#Para python2
+#!/usr/bin/python2
+
+#Para python3
+#!/usr/bin/python3
+```
+
+Código que genera las curvas:
+```
+#!/usr/bin/python2
+import matplotlib.pyplot as plt
+import numpy as np
+
+a = np.linspace(1,25,25)
+b = np.linspace(2,26,25)
+t = np.linspace(0,2*np.pi,200)
+
+plt.figure(figsize=(8, 8))
+plt.subplots_adjust(hspace=0.00, wspace=0.00)
+for i in range(0,25):
+	x = (np.sin(a[i]*t) + (np.pi/2))
+	y = np.sin(b[i]*t)
+	plt.subplot(5,5,i+1)
+	plt.plot(x,y)
+	plt.axis("off")
+plt.savefig("lissajous.png", format='png',bbox_inches='tight',transparent=False)
+```
+Y por último podemos ver las gráficas a continuación:
+![](https://raw.githubusercontent.com/diegolramirez/MC/master/Talleres/taller(15-06-10)/lissajous.png)
 
 ---
 #(12-06-15) Octava Clase
