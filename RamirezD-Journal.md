@@ -240,6 +240,14 @@ Y por último podemos ver las gráficas a continuación:
 
 ---
 #(16-06-15) Novena Clase
+###Interpolación (en python)
+**Nota** convenciones para importación de paquetes:
+```
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+```
 
 ---
 #(17-06-15) Décima Clase
