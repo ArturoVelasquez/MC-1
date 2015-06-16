@@ -16,9 +16,11 @@ y los métodos a estudiar son:
 5. ecuaciones diferenciales parciales,
 6. y métodos de Monte Carlo
 
+---
 #(28-05-15) Primera Lectura
 Resumen realizado de las lecturas **Pro Git** pgs 27-34 y **Pro Bash Programming** pgs 1-28.
 
+---
 #(29-05-15) Segunda Clase
 Completamos introducción a Git. Taller realizado en el laboratorio.
 Cómo hacer una tabla en Markdown:
@@ -29,8 +31,9 @@ Cómo hacer una tabla en Markdown:
 |  |   |  |  |
 |  |   |  |  |
 
- Nota: los comandos de html sirven en markdown: <bold>Negrilla en html</bold> - **negrilla en markdown**
+ Nota: algunos comandos de html sirven en markdown: <u>subrayado en html</u> - markdown propiamente no tiene un comando para subrayar.
 
+---
 #(02-06-15) Tercera Clase
 ###Expresiones regulares.
 - *^* Representa el inicio de una línea.
@@ -107,6 +110,7 @@ plot "joviansatellites.csv" using 2:3 with linesp
 EOF
 ```
 
+---
 #(03-06-15) Cuarta Clase
 `pqcopy` Copia en el portapapeles (al menos en Mac) - averiguar para ubuntu.
 
@@ -114,10 +118,45 @@ EOF
 
 Herramienta útil para copiar código html de páginas web -> w3m. `sudo apt-get install w3m`
 
-#(05-06-15)
+---
+#(05-06-15) Quinta Clase
 ```
 touch esfericos.c
-set view equal xyz #para que las gráficas en 3D se vean simétricas
+set view equal xyz #para que las gráficas de gnuplot en 3D se vean simétricas
 ```
 
-passwd
+Para cambiar la contraseña en compufísica (y linux en general) introducir el comando `passwd` en la consola.
+
+####Hands-On3 log
+1. Aprenda algo sobre [make](re-carpentry.org/v4/make/), y haga un resumen básico de su funcionalidad.
+
+Make es una herramienta que ayuda a organizar dependencias de archivos cuando se quieren crear ejecutables. A veces el volumen de archivos a manejar es excesivamente grande y resulta ser una tarea muy largo y engorrosa realizar la compilación y creación de los ejectubales a mano. Para esto la herramienta **make** permite la creación de este tipo de archivos siguiendo algunos parámetros especificados por el usuario.
+
+---
+#(09-06-15) Sexta Clase
+
+---
+#(10-06-15) Séptima Clase
+
+---
+#(12-06-15) Octava Clase
+
+---
+#(16-06-15) Novena Clase
+
+---
+#(17-06-15) Décima Clase
+
+---
+#(19-06-15) Décima Primera Clase
+
+---
+#(23-06-15) Décima Segunda Clase
+
+---
+#(24-06-15) Décima Tercera Clase
+
+---
+#(26-06-15) Décima Cuarta Clase
+
+---
