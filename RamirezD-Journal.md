@@ -234,6 +234,17 @@ Y por último podemos ver las gráficas a continuación:
 #(12-06-15) Octava Clase
 ####Hands-On6 log
 ## Error e incertidumbre en cálculos numéricos
+Al utilizar computadores para resolver problemas matemáticos inevitablemente nos encontraremos con errores que provocan incertidumbre en los resultados. Estos provienen de errores humanos o de limitaciones de hardware/software de la máquina utilizada. Los cuatro principales tipos de errores con los que nos podemos topar son los siguientes:
+
++ **Blunders or bad theory:** Se dan cuando se leen/introducen mal los datos al programa, o en su defecto existe algún error en las fórmulas o en la teoría que sustenta la matemática.
+
++ **Random errors:** Se producen por eventos inesperados en el hardware, como que se desconecte algo o que se dañe algún transistor. Son los menos usuales.
+
++ **Approximation errors:** Son errores cuando se trata de acomodar conceptos matemáticos a la realidad de la computación, como aproximar series infinitas a números finitos, utilizar límites etc. Su uso excesvio podría derivar en un alto grado de incertidumbre en el resultado final.
+
++ **Round-off errors:** Esto se refiere a la limitación en la cantidad de cifras decimales que puede almacenar un computador. Cuando se llega al límite entonces se redondean los valores para no superar la cantidad de memoria dispobible y llegar a un overflow. Esto termina produciendo errores en los resultados ya que reduce la información inicial.
+
+
 
 1. Inicie un cuaderno de IPython con apuntes del libro de [Landau](http://www.compadre.org/psrc/items/detail.cfm?ID=11578) llamado `/MC/Notes/LandauNotes.ipynb`, lea el segundo capítulo del libro, intente reproducir algunos de los resultados y resuelva algunos ejercicios.
 2. En su bitácora escriba al menos dos párrafos de resumen de lo aprendido sobre error e incertidumbre.
@@ -301,7 +312,9 @@ plt.savefig("campoB.png")
 plt.show()
 ```
 
-La imagen es esta: ![](https://raw.githubusercontent.com/diegolramirez/MC/master/Talleres/taller(15-06-16)/camposB.png)
+La imagen es esta: ![](https://raw.githubusercontent.com/diegolramirez/MC/master/Talleres/taller(15-06-16)/campoB.png)
+
+Momento magnetico = 674274.228895 A m^2
 
 4. Dedique diez minutos a pensar en ideas para su proyecto final.
 
