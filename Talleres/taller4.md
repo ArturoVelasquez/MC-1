@@ -18,13 +18,15 @@ def interpolacion_seno(numPuntos=4,**kawrgs):
     xpol = np.linspace(0,2*np.pi,1000)
     pol = interlagr(x,y)
     #Gráfica
-    plt.plot(x,y,color='red',label='Datos',linestyle='--')
+    plt.scatter(x,y,color='red',label='Datos')
     plt.plot(xpol,pol(xpol),color='blue',label='Interpolación')
     plt.legend()
     plt.xlim(-0.3,np.pi*2+0.3)
     plt.ylim(-1.5,1.5)
-    plt.text(4,0.7,"Número de puntos\niniciales: %d"%numPuntos)
+    plt.text(4.3,0.7,"Número de puntos\niniciales: %d"%numPuntos)
     plt.show()
+
+interpolacion_seno(numPuntos=7)
 ```
 El resultado final se ve así:
 ![](https://raw.githubusercontent.com/diegolramirez/MC/master/Talleres/taller(15-06-17)/sin.png)
@@ -49,23 +51,23 @@ polpulse = interlagr(x,ypulse)
 polstep = interlagr(x,ystep)
 
 #Hago las gráficas
-plt.figure(figsize=(8, 8))
+plt.figure(figsize=(11, 7))
 plt.subplots_adjust(hspace=0.3, wspace=0.00)
 #Pulse
 plt.subplot(2,1,1)
-plt.plot(x,ypulse,color='red',label='Datos',linestyle='--')
+plt.scatter(x,ypulse,color='red',label='Datos')
 plt.plot(xpol,linearpulse(xpol),color='blue',label='Linear')
 plt.plot(xpol,cubicpulse(xpol),color='green',label='Cubic')
 plt.plot(xpol,polpulse(xpol),color='black',label='Poli')
-plt.legend(loc=8)
+plt.legend(loc=8,frameon=0)
 plt.title("Pulse")
 #Step
 plt.subplot(2,1,2)
-plt.plot(x,ystep,color='red',label='Datos',linestyle='--')
+plt.scatter(x,ystep,color='red',label='Datos')
 plt.plot(xpol,linearstep(xpol),color='blue',label='Linear')
 plt.plot(xpol,cubicstep(xpol),color='green',label='Cubic')
 plt.plot(xpol,polstep(xpol),color='black',label='Poli')
-plt.legend(loc=4)
+plt.legend(loc=4,frameon=0)
 plt.title("Step")
 
 plt.show()
@@ -103,6 +105,52 @@ El resultado final se ve así:
 |4.19566321688|0.0396966472625|
 |4.3105185461|-0.0681282942773|
 |4.45641816306|-0.0704087548339|
+
+```
+#Descargo los datos y los formateo a un .csv
+os.system("curl -s https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionalesLaboratorio/master/2015-V/actividades/talleres/Taller4/Taller4.md > datos3.txt")
+os.system("sed -i '1,/3\.\ La/d' datos3.txt")
+os.system("sed -i '/Al\ terminar\ la/,$d' datos3.txt")
+os.system("sed -i 's/^\s//g' datos3.txt")
+os.system("sed -i '/^ *$/d' datos3.txt")
+os.system("sed -i 's/^|//g' datos3.txt")
+os.system("sed -i 's/|$//g' datos3.txt")
+os.system("sed -i 's/|/,/g' datos3.txt")
+os.system("sed -i '/--/d' datos3.txt")
+os.system("sed -i 's/\s//g' datos3.txt")
+os.system("mv datos3.txt datos3.csv")
+
+#Importo datos
+datos3 = np.genfromtxt("datos3.csv",delimiter=",",names=True)
+
+#Hago la interpolación y defino un nuevo intervalo x con más puntos
+cubicInterpolation = interpolate.interp1d(datos3["x"],datos3["y"],kind='cubic')
+xinterpol = np.linspace(datos3["x"][0],datos3["x"][len(datos3["x"])-1],1000)
+
+#Grafico interpolación y datos originales
+plt.scatter(datos3["x"],datos3["y"],color='red',label='Datos',linestyle='--')
+plt.plot(xinterpol,cubicInterpolation(xinterpol),color='blue',label='CubicFit')
+plt.legend(loc=4)
+plt.title("Interpolación con datos no uniformemente espaciados")
+plt.show()
+```
+El resultado final se ve así:
+![](https://raw.githubusercontent.com/diegolramirez/MC/master/Talleres/taller(15-06-17)/datosnu.png)
+
+```
+#Defino un nuevo intervalo x, y uniformemente espaciados
+xespaciado = np.linspace(datos3["x"][0],datos3["x"][len(datos3["x"])-1],len(datos3["x"]))
+yespaciado = cubicInterpolation(xespaciado)
+
+#Grafico interpolación y datos uniformemente espaciados
+plt.scatter(xespaciado,yespaciado,color='blue',label='DatosUniformes')
+plt.plot(xinterpol,cubicInterpolation(xinterpol),color='red',label='CubicFit')
+plt.legend()
+plt.title("Interpolación con datos uniformemente espaciados")
+plt.show()
+```
+El resultado final se ve así:
+![](https://raw.githubusercontent.com/diegolramirez/MC/master/Talleres/taller(15-06-17)/datosu.png)
 
 
 **Al terminar la clase ejecute `lottery.sh` para saber si su taller va a ser revisado.**
