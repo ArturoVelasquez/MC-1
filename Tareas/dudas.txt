@@ -1,0 +1,3 @@
+Mostrar error en el logaritmo del módulo y preguntat si ese es el error al que se refiere Juan David
+la transformada discreta de fourier es la que brinda la función np.fft.fft2()? (esta es para arrays 2d)
+Por qué no se parece el punto (c)? :(
