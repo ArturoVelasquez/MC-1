@@ -338,7 +338,10 @@ Archivo = np.genfromtxt(os.path.expanduser("LinkVaAqui"))
 ####Hands-On10 log
 1. Estime la duración del [ciclo solar](https://en.wikipedia.org/wiki/Solar_cycle) analizando con una DFT los datos [monthrg.dat](https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionalesDatos/master/hands_on/solar/monthrg.dat). La descripción del archivo está [aquí](https://github.com/ComputoCienciasUniandes/MetodosComputacionalesDatos/blob/master/hands_on/solar/README). Además utilice un filtro de altas frecuencias para obtener una gráfica similar a la mostrada abajo.
 
+La respuesta a este prolema se puede encontrar en el siguiente [cuaderno](https://github.com/diegolramirez/MC/blob/master/Talleres/taller(15-06-23)/SolSol.ipynb)
 
+La gráfica del filtrado quedó de la siguiente manera:
+![](https://raw.githubusercontent.com/diegolramirez/MC/master/Talleres/taller(15-06-23)/filtradoFourier.png)
 
 ---
 #(24-06-15) Décima Tercera Clase
