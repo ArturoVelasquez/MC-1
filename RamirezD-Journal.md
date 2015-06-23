@@ -322,12 +322,23 @@ Teniendo en cuenta que mi primera proposición para el proyecto final no es vál
 
 ---
 #(17-06-15) Décima Clase
+Para importar un archivo que está en internet a python:
+```
+import numpy as np
+import os
 
+Archivo = np.genfromtxt(os.path.expanduser("LinkVaAqui"))
+```
 ---
 #(19-06-15) Décima Primera Clase
 
 ---
 #(23-06-15) Décima Segunda Clase
+
+####Hands-On10 log
+1. Estime la duración del [ciclo solar](https://en.wikipedia.org/wiki/Solar_cycle) analizando con una DFT los datos [monthrg.dat](https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionalesDatos/master/hands_on/solar/monthrg.dat). La descripción del archivo está [aquí](https://github.com/ComputoCienciasUniandes/MetodosComputacionalesDatos/blob/master/hands_on/solar/README). Además utilice un filtro de altas frecuencias para obtener una gráfica similar a la mostrada abajo.
+
+
 
 ---
 #(24-06-15) Décima Tercera Clase
