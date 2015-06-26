@@ -27,7 +27,7 @@ sed -i 's/^ *//' correr.txt
 cat correr.txt | perl -pe 's/<\/ele>\n/ /g' > running_dirty_nov.gpx
 
 #
-echo -e "lon,lat,elev,time\n$(cat running_dirty_nov.gpx)" > correr.txt
+echo -e "lon,lat,elev,hour,min,sec\n$(cat running_dirty_nov.gpx)" > correr.txt
 
 #
 sed -r -i 's/\s+//g' correr.txt
@@ -39,10 +39,10 @@ sed -i 's/<ele>/,/g' correr.txt
 sed -i 's/<time>2015-04-18T/,/g' correr.txt
 
 #
-sed 's/\.000Z<\/time>//g' correr.txt > datoscorrer.csv
+sed -i 's/\.000Z<\/time>//g' correr.txt
 
 #
-#sed -i 's/://g' datoscorrer.csv
+sed 's/:/,/g' correr.txt > datoscorrer.csv
 
 #
 rm correr.txt running_dirty_nov.gpx
