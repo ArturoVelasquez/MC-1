@@ -31,7 +31,7 @@ def dydt(y):
     r31=y[4]-y[0]
     r12c=r12/mag(r12)**3
     r23c=r23/mag(r23)**3
-    	r31c=r31/mag(r31)**3
+    r31c=r31/mag(r31)**3
     deriv[1] = -m2.mass*r12c + m3.mass*r31c
     deriv[3] = -m3.mass*r23c + m1.mass*r12c
     deriv[5] = -m1.mass*r31c + m2.mass*r23c
