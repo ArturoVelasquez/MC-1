@@ -26,8 +26,12 @@ for a in [m1, m2, m3]:
 def dydt(y):
 ## determine the derivative of the state vector y
     deriv = zeros((6,3), dtype=vector)
-    r12=y[0]-y[2]; r23=y[2]-y[4]; r31=y[4]-y[0]
-    r12c=r12/mag(r12)**3; r23c=r23/mag(r23)**3; r31c=r31/mag(r31)**3
+    r12=y[0]-y[2]
+    r23=y[2]-y[4]
+    r31=y[4]-y[0]
+    r12c=r12/mag(r12)**3
+    r23c=r23/mag(r23)**3
+    	r31c=r31/mag(r31)**3
     deriv[1] = -m2.mass*r12c + m3.mass*r31c
     deriv[3] = -m3.mass*r23c + m1.mass*r12c
     deriv[5] = -m1.mass*r31c + m2.mass*r23c
@@ -40,10 +44,15 @@ while True:
   rate(100)
   ## solve using forth-order Runge Kutta.  See CHOPF p62.
   y = [m1.pos,m1.vel,m2.pos,m2.vel,m3.pos,m3.vel]
-  k1 = dt*dydt(y);  k2 = dt*dydt(y+k1/2.0)
-  k3 = dt*dydt(y+k2/2.0);  k4 = dt*dydt(y+k3)
+  k1 = dt*dydt(y)
+  k2 = dt*dydt(y+k1/2.0)
+  k3 = dt*dydt(y+k2/2.0)
+  k4 = dt*dydt(y+k3)
   dy = k1/6.0 + k2/3.0 +k3/3.0 + k4/6.0
 ## update the animation
-  m1.pos += dy[0]; m1.vel += dy[1]
-  m2.pos += dy[2]; m2.vel += dy[3]
-  m3.pos += dy[4]; m3.vel += dy[5]
+  m1.pos += dy[0]
+  m1.vel += dy[1]
+  m2.pos += dy[2]
+  m2.vel += dy[3]
+  m3.pos += dy[4]
+  m3.vel += dy[5]
