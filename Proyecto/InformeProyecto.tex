@@ -70,8 +70,13 @@ A su vez, C forma un sistema ya que posee 7 planetas que lo orbitan. Se presume 
 \end{figure}
 }
 
-Se tomará como origen virtual el punto sobre el cual las 3 estrellas orbitan. La información de las masas, velocidades y posiciones relativas iniciales de las cuales parte la simulación se pueden observar en este \href{https://github.com/diegolramirez/MC/blob/master/Proyecto/datos.csv}{.csv}.\\
+Se tomará como origen virtual el punto sobre el cual las 3 estrellas orbitan, también dado que las órbitas tienen una excentricidad moderadamente baja se asumirá que las órbitas son circulares. Por último, se restará la velocidad del centro de masa a todo el sistema para así poder "aislar" en el espacio a todo el sistema y evitar que se traslade.\\
 
-El código donde está presente la solución al problema puede ser encontrado en el siguiente \href{https://github.com/diegolramirez/MC/blob/master/Proyecto/proyecto.ipynb}{cuaderno de ipynb}.
+La información de las masas, velocidades y posiciones relativas iniciales de las cuales parte la simulación se pueden observar en este \href{https://github.com/diegolramirez/MC/blob/master/Proyecto/datos.csv}{.csv}. El código donde está presente la solución al problema puede ser encontrado en el siguiente \href{https://github.com/diegolramirez/MC/blob/master/Proyecto/proyecto.ipynb}{cuaderno de ipynb}.
+}
+
+\section{\label{conc}Conclusión}
+{
+Al final la animación no funcionó como esperábamos. Fue probada con otros sistemas de cuerpos más pequeños y con datos generados para fines pedagógicos y sí obtuvimos resultados esperados. Por lo tanto creemos que el problema radica en los datos que obtuvimos de Gliese 667, quizá los mal interpretamos o no son correctos los datos encontrados en las bases de datos. 
 }
 \end{document}
